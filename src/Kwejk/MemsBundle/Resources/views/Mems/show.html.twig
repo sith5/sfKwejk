@@ -6,6 +6,8 @@
     
     <h1>{{ block('title') }}</h1>
         <div>
+            
+            
             <p>{{ mem.title }}</p>
             <img src="{{ asset('uploads/mems/' ~ mem.imageName) }}" alt="{{ mem.title }}">
             
@@ -17,7 +19,7 @@
                 
                 <p id="comment-{{ mem.id }}}}">
                     {{ comment.comment }}
-                    <small>Dodany przez {{ comment.createdBy }}, dnia {{ comment.createdAt|date('Y-m-d H:i:s') }}</small>
+                    <small>Dodany przez {{ comment.createdBy }}, dnia {{ comment.createAt|date('Y-m-d H:i:s') }}</small>
                 
                 </p>
                 {% else %}
