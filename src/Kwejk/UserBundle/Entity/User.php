@@ -26,26 +26,31 @@ class User extends BaseUser
     public function __construct()
     {
         parent::__construct();
-        // your own logic
+        
+        $this->roles = ['ROLE_USER']; //kazdy nowy user ebdzie mial z atutomatu role usera
+        
+        $this->mems = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->comments = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->ratings = new \Doctrine\Common\Collections\ArrayCollection();
     }
     
     /**
      * @ORM\OneToMany(targetEntity="Kwejk\MemsBundle\Entity\Mem", mappedBy="createdBy")
      * @var ArrayCollection
      */ 
-    private $mems;
+    protected $mems;
     
     /**
      * @ORM\OneToMany(targetEntity="Kwejk\MemsBundle\Entity\Comment", mappedBy="createdBy")
      * @var ArrayCollection
      */ 
-    private $comments;
+    protected $comments;
     
     /**
      * @ORM\OneToMany(targetEntity="Kwejk\MemsBundle\Entity\Rating", mappedBy="createdBy")
      * @var ArrayCollection
      */ 
-    private $ratings;
+    protected $ratings;
     
     /**
      * Get id
