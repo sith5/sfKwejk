@@ -14,7 +14,9 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
+        <div class="container">
         {% block body %}{% endblock %}
+        </div>
         {% block javascripts %}
             {% javascripts
                 'https://code.jquery.com/jquery-1.11.1.min.js'

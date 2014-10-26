@@ -9,7 +9,7 @@ class MemsController extends Controller
     public function listAction()
     {
         $mems = $this->getDoctrine()
-                ->getRepository('KwejkMemsBundle:Mems')
+                ->getRepository('KwejkMemsBundle:Mem')
                 ->findBy([
                     'isAccepted' => true,
                 ]);
@@ -21,7 +21,7 @@ class MemsController extends Controller
     public function showAction($slug)
     {
         $mem = $this->getDoctrine()
-                ->getRepository('KwejkMemsBundle:Mems')
+                ->getRepository('KwejkMemsBundle:Mem')
                 ->findOneBy([
                     'slug' => $slug,
                 ]);
